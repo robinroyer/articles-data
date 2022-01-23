@@ -13,7 +13,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5240/GetWeatherForecast",
+      "launchUrl": "http://localhost:5240/WeatherForecast",
       "applicationUrl": "https://localhost:7102;http://localhost:5240",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
