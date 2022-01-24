@@ -1,0 +1,97 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/09cdd6b6-9c8a-4459-a575-415639b97770
+// command took 1.72s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/09cdd6b6-9c8a-4459-a575-415639b97770
+// command took 3.59s and exited with 0
+// ***** Done, took 00:00:05 (5.41 sec)   *****
+// Found 1 benchmarks:
+//   ForecastJobWithLeak.Work: Job-VXFUCA(IterationCount=1, RunStrategy=Monitoring) [N=5]
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-VXFUCA(IterationCount=1, RunStrategy=Monitoring) [N=5]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "09cdd6b6-9c8a-4459-a575-415639b97770.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 5)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 0 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/09cdd6b6-9c8a-4459-a575-415639b97770/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-DGLTSS(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 1004305929.00 ns, 1.0043 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 14256212.00 ns, 14.2562 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 14256212.00 ns, 14.2562 ms/op
+GC:  0 0 0 177664 1
+Threading:  56 0 1
+
+// AfterAll
+// Benchmark Process 64544 has exited with code 0.
+
+Mean = 14.256 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 14.256 ms, Q1 = 14.256 ms, Median = 14.256 ms, Q3 = 14.256 ms, Max = 14.256 ms
+IQR = 0.000 ms, LowerFence = 14.256 ms, UpperFence = 14.256 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report.csv
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report-github.md
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report.html
+
+// * Detailed results *
+ForecastJobWithLeak.Work: Job-VXFUCA(IterationCount=1, RunStrategy=Monitoring) [N=5]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 14.256 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 14.256 ms, Q1 = 14.256 ms, Median = 14.256 ms, Q3 = 14.256 ms, Max = 14.256 ms
+IQR = 0.000 ms, LowerFence = 14.256 ms, UpperFence = 14.256 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[14.256 ms ; 14.256 ms) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=ubuntu 20.04
+AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+  Job-VXFUCA : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+
+IterationCount=1  RunStrategy=Monitoring  
+
+| Method | N |     Mean | Error | Allocated |
+|------- |-- |---------:|------:|----------:|
+|   Work | 5 | 14.26 ms |    NA |    174 KB |
+
+// * Warnings *
+MinIterationTime
+  ForecastJobWithLeak.Work: IterationCount=1, RunStrategy=Monitoring -> The minimum observed iteration time is 14.2562 ms which is very small. It's recommended to increase it to at least 100.0000 ms using more operations.
+
+// * Legends *
+  N         : Value of the 'N' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:01 (1.76 sec), executed benchmarks: 1
+
+Global total time: 00:00:07 (7.18 sec), executed benchmarks: 1
+// * Artifacts cleanup *

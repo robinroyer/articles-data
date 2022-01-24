@@ -1,0 +1,8 @@
+// Validating benchmarks:
+No exporters defined, results will not be persisted.
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/995b8cfb-401c-4e1e-8a12-bce498b14a8e
+// command took 1.9s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/995b8cfb-401c-4e1e-8a12-bce498b14a8e

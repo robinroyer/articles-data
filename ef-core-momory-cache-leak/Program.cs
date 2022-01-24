@@ -28,19 +28,38 @@ using (var context = scope.ServiceProvider.GetService<ef_core_momory_cache_leak.
 }
 
 
-using var jobScope = app.Services.CreateScope();
-switch (builder.Configuration.GetValue<string>("backgroundJob"))
+if (builder.Configuration.GetValue<bool>("benchmark", false))
 {
-    case "leak":
-        var jobWithLeak = jobScope.ServiceProvider.GetRequiredService<ef_core_momory_cache_leak.ForecastJobWithLeak>();
-        jobWithLeak.Work(); // not awaited
-        break;
-    case "no-leak":
-        var jobWithoutLeak = jobScope.ServiceProvider.GetRequiredService<ef_core_momory_cache_leak.ForecastJobWithoutLeak>();
-        jobWithoutLeak.Work(); // not awaited
-        break;
-    default:
-        break;
+
+    BenchmarkDotNet
+        .Running
+        .BenchmarkRunner
+        .Run(
+            typeof(ef_core_momory_cache_leak.IJob).Assembly,
+            BenchmarkDotNet
+                .Configs
+                .ManualConfig
+                .CreateMinimumViable()
+                .AddDiagnoser(BenchmarkDotNet.Diagnosers.MemoryDiagnoser.Default)
+                .WithOption(BenchmarkDotNet.Configs.ConfigOptions.DisableLogFile, true)
+            );
+}
+else
+{
+    using var jobScope = app.Services.CreateScope();
+    switch (builder.Configuration.GetValue<string>("backgroundJob"))
+    {
+        case "leak":
+            var jobWithLeak = jobScope.ServiceProvider.GetRequiredService<ef_core_momory_cache_leak.ForecastJobWithLeak>();
+            jobWithLeak.Work(); // not awaited
+            break;
+        case "no-leak":
+            var jobWithoutLeak = jobScope.ServiceProvider.GetRequiredService<ef_core_momory_cache_leak.ForecastJobWithoutLeak>();
+            jobWithoutLeak.Work(); // not awaited
+            break;
+        default:
+            break;
+    }
+    app.Run();
 }
 
-app.Run();

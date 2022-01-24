@@ -1,0 +1,128 @@
+// Validating benchmarks:
+No exporters defined, results will not be persisted.
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 8 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/6efcff46-020e-475e-b391-671ce6bb568e
+// command took 1.66s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/6efcff46-020e-475e-b391-671ce6bb568e
+// command took 3.64s and exited with 0
+// ***** Done, took 00:00:05 (5.41 sec)   *****
+// Found 4 benchmarks:
+//   ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=100]
+//   ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=500]
+//   ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+//   ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=5000]
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=100]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "6efcff46-020e-475e-b391-671ce6bb568e.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 100)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 0 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/6efcff46-020e-475e-b391-671ce6bb568e/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-ZSCODG(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 1416274633.00 ns, 1.4163 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 421775675.00 ns, 421.7757 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 421775675.00 ns, 421.7757 ms/op
+GC:  1 0 0 24160824 1
+Threading:  1382 0 1
+
+// AfterAll
+// Benchmark Process 69062 has exited with code 0.
+
+Mean = 421.776 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 421.776 ms, Q1 = 421.776 ms, Median = 421.776 ms, Q3 = 421.776 ms, Max = 421.776 ms
+IQR = 0.000 ms, LowerFence = 421.776 ms, UpperFence = 421.776 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=500]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "6efcff46-020e-475e-b391-671ce6bb568e.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 500)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 1 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/6efcff46-020e-475e-b391-671ce6bb568e/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-ZWVDIQ(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 3337033972.00 ns, 3.3370 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 3226450679.00 ns, 3.2265 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 3226450679.00 ns, 3.2265 s/op
+GC:  32 2 0 540131224 1
+Threading:  6834 0 1
+
+// AfterAll
+// Benchmark Process 69097 has exited with code 0.
+
+Mean = 3.226 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.226 s, Q1 = 3.226 s, Median = 3.226 s, Q3 = 3.226 s, Max = 3.226 s
+IQR = 0.000 s, LowerFence = 3.226 s, UpperFence = 3.226 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "6efcff46-020e-475e-b391-671ce6bb568e.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 1000)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 2 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/6efcff46-020e-475e-b391-671ce6bb568e/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-BQSIOS(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 6626096627.00 ns, 6.6261 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 9633151558.00 ns, 9.6332 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 9633151558.00 ns, 9.6332 s/op
+GC:  128 2 0 2130298824 1
+Threading:  13728 0 1
+
+// AfterAll
+// Benchmark Process 69149 has exited with code 0.
+
+Mean = 9.633 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 9.633 s, Q1 = 9.633 s, Median = 9.633 s, Q3 = 9.633 s, Max = 9.633 s
+IQR = 0.000 s, LowerFence = 9.633 s, UpperFence = 9.633 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-QRULPX(IterationCount=1, RunStrategy=Monitoring) [N=5000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "6efcff46-020e-475e-b391-671ce6bb568e.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 5000)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 3 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/6efcff46-020e-475e-b391-671ce6bb568e/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-QLKIVU(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 67347165537.00 ns, 67.3472 s/op
+
+// BeforeActualRun

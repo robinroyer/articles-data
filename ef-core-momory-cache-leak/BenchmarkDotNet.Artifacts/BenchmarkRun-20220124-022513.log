@@ -1,0 +1,330 @@
+// Validating benchmarks:
+No exporters defined, results will not be persisted.
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 6 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032
+// command took 1.79s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032
+// command took 3.82s and exited with 0
+// ***** Done, took 00:00:05 (5.74 sec)   *****
+// Found 3 benchmarks:
+//   ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=100]
+//   ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=500]
+//   ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=100]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "abf65dc8-80fc-48ef-abf5-b73e233ae032.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 100)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 0 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-RQWELR(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 1829566485.00 ns, 1.8296 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 514476757.00 ns, 514.4768 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 514476757.00 ns, 514.4768 ms/op
+GC:  1 0 0 24100736 1
+Threading:  1296 0 1
+
+// AfterAll
+// Benchmark Process 69954 has exited with code 0.
+
+Mean = 514.477 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 514.477 ms, Q1 = 514.477 ms, Median = 514.477 ms, Q3 = 514.477 ms, Max = 514.477 ms
+IQR = 0.000 ms, LowerFence = 514.477 ms, UpperFence = 514.477 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=500]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "abf65dc8-80fc-48ef-abf5-b73e233ae032.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 500)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 1 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-JFVNBJ(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 3802794071.00 ns, 3.8028 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 3457902240.00 ns, 3.4579 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 3457902240.00 ns, 3.4579 s/op
+GC:  32 2 0 540195728 1
+Threading:  6901 0 1
+
+// AfterAll
+// Benchmark Process 70035 has exited with code 0.
+
+Mean = 3.458 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.458 s, Q1 = 3.458 s, Median = 3.458 s, Q3 = 3.458 s, Max = 3.458 s
+IQR = 0.000 s, LowerFence = 3.458 s, UpperFence = 3.458 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "abf65dc8-80fc-48ef-abf5-b73e233ae032.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 1000)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 2 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-AOSTZH(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 6786978960.00 ns, 6.7870 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 9608191377.00 ns, 9.6082 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 9608191377.00 ns, 9.6082 s/op
+GC:  127 2 0 2130380200 1
+Threading:  13801 0 1
+
+// AfterAll
+// Benchmark Process 70156 has exited with code 0.
+
+Mean = 9.608 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 9.608 s, Q1 = 9.608 s, Median = 9.608 s, Q3 = 9.608 s, Max = 9.608 s
+IQR = 0.000 s, LowerFence = 9.608 s, UpperFence = 9.608 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 3 benchmark(s) to run **
+Run time: 00:00:46 (46.22 sec), executed benchmarks: 3
+
+// Found 3 benchmarks:
+//   ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=100]
+//   ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=500]
+//   ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+
+// **************************
+// Benchmark: ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=100]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "abf65dc8-80fc-48ef-abf5-b73e233ae032.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithoutLeak.Work(N: 100)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 3 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-TXGMUO(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 1861318515.00 ns, 1.8613 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 491522937.00 ns, 491.5229 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 491522937.00 ns, 491.5229 ms/op
+GC:  0 0 0 10540312 1
+Threading:  1371 0 1
+
+// AfterAll
+// Benchmark Process 70243 has exited with code 0.
+
+Mean = 491.523 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 491.523 ms, Q1 = 491.523 ms, Median = 491.523 ms, Q3 = 491.523 ms, Max = 491.523 ms
+IQR = 0.000 ms, LowerFence = 491.523 ms, UpperFence = 491.523 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=500]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "abf65dc8-80fc-48ef-abf5-b73e233ae032.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithoutLeak.Work(N: 500)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 4 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-HLRYHR(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 3643489079.00 ns, 3.6435 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 1910729592.00 ns, 1.9107 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 1910729592.00 ns, 1.9107 s/op
+GC:  3 0 0 52665912 1
+Threading:  6968 0 1
+
+// AfterAll
+// Benchmark Process 70271 has exited with code 0.
+
+Mean = 1.911 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 1.911 s, Q1 = 1.911 s, Median = 1.911 s, Q3 = 1.911 s, Max = 1.911 s
+IQR = 0.000 s, LowerFence = 1.911 s, UpperFence = 1.911 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// **************************
+// Benchmark: ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "abf65dc8-80fc-48ef-abf5-b73e233ae032.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithoutLeak.Work(N: 1000)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 5 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/abf65dc8-80fc-48ef-abf5-b73e233ae032/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-FYCUSR(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 5719224028.00 ns, 5.7192 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 3862213803.00 ns, 3.8622 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 3862213803.00 ns, 3.8622 s/op
+GC:  6 0 0 105376416 1
+Threading:  13925 0 1
+
+// AfterAll
+// Benchmark Process 70320 has exited with code 0.
+
+Mean = 3.862 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.862 s, Q1 = 3.862 s, Median = 3.862 s, Q3 = 3.862 s, Max = 3.862 s
+IQR = 0.000 s, LowerFence = 3.862 s, UpperFence = 3.862 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:24 (24.69 sec), executed benchmarks: 3
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+
+// * Detailed results *
+ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=100]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 514.477 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 514.477 ms, Q1 = 514.477 ms, Median = 514.477 ms, Q3 = 514.477 ms, Max = 514.477 ms
+IQR = 0.000 ms, LowerFence = 514.477 ms, UpperFence = 514.477 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[514.477 ms ; 514.477 ms) | @
+---------------------------------------------------
+
+ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=100]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 491.523 ms, StdErr = 0.000 ms (0.00%), N = 1, StdDev = 0.000 ms
+Min = 491.523 ms, Q1 = 491.523 ms, Median = 491.523 ms, Q3 = 491.523 ms, Max = 491.523 ms
+IQR = 0.000 ms, LowerFence = 491.523 ms, UpperFence = 491.523 ms
+ConfidenceInterval = [NaN ms; NaN ms] (CI 99.9%), Margin = NaN ms (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[491.523 ms ; 491.523 ms) | @
+---------------------------------------------------
+
+ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=500]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 3.458 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.458 s, Q1 = 3.458 s, Median = 3.458 s, Q3 = 3.458 s, Max = 3.458 s
+IQR = 0.000 s, LowerFence = 3.458 s, UpperFence = 3.458 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[3.458 s ; 3.458 s) | @
+---------------------------------------------------
+
+ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=500]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 1.911 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 1.911 s, Q1 = 1.911 s, Median = 1.911 s, Q3 = 1.911 s, Max = 1.911 s
+IQR = 0.000 s, LowerFence = 1.911 s, UpperFence = 1.911 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[1.911 s ; 1.911 s) | @
+---------------------------------------------------
+
+ForecastJobWithLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 9.608 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 9.608 s, Q1 = 9.608 s, Median = 9.608 s, Q3 = 9.608 s, Max = 9.608 s
+IQR = 0.000 s, LowerFence = 9.608 s, UpperFence = 9.608 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[9.608 s ; 9.608 s) | @
+---------------------------------------------------
+
+ForecastJobWithoutLeak.Work: Job-EUXEEY(IterationCount=1, RunStrategy=Monitoring) [N=1000]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 3.862 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.862 s, Q1 = 3.862 s, Median = 3.862 s, Q3 = 3.862 s, Max = 3.862 s
+IQR = 0.000 s, LowerFence = 3.862 s, UpperFence = 3.862 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[3.862 s ; 3.862 s) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=ubuntu 20.04
+AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+  Job-EUXEEY : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+
+IterationCount=1  RunStrategy=Monitoring  
+
+|                   Type | Method |    N |       Mean | Error | Ratio | RatioSD |       Gen 0 |     Gen 1 | Allocated |
+|----------------------- |------- |----- |-----------:|------:|------:|--------:|------------:|----------:|----------:|
+|    ForecastJobWithLeak |   Work |  100 |   514.5 ms |    NA |     ? |       ? |   1000.0000 |         - |     23 MB |
+|                        |        |      |            |       |       |         |             |           |           |
+| ForecastJobWithoutLeak |   Work |  100 |   491.5 ms |    NA |  1.00 |    0.00 |           - |         - |     10 MB |
+|                        |        |      |            |       |       |         |             |           |           |
+|    ForecastJobWithLeak |   Work |  500 | 3,457.9 ms |    NA |     ? |       ? |  32000.0000 | 2000.0000 |    515 MB |
+|                        |        |      |            |       |       |         |             |           |           |
+| ForecastJobWithoutLeak |   Work |  500 | 1,910.7 ms |    NA |  1.00 |    0.00 |   3000.0000 |         - |     50 MB |
+|                        |        |      |            |       |       |         |             |           |           |
+|    ForecastJobWithLeak |   Work | 1000 | 9,608.2 ms |    NA |     ? |       ? | 127000.0000 | 2000.0000 |  2,032 MB |
+|                        |        |      |            |       |       |         |             |           |           |
+| ForecastJobWithoutLeak |   Work | 1000 | 3,862.2 ms |    NA |  1.00 |    0.00 |   6000.0000 |         - |    100 MB |
+
+// * Legends *
+  N         : Value of the 'N' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  Ratio     : Mean of the ratio distribution ([Current]/[Baseline])
+  RatioSD   : Standard deviation of the ratio distribution ([Current]/[Baseline])
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ms      : 1 Millisecond (0.001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Global total time: 00:01:16 (76.76 sec), executed benchmarks: 6
+// * Artifacts cleanup *

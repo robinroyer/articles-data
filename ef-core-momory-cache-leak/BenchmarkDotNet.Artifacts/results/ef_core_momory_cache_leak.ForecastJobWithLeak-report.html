@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>ef_core_momory_cache_leak.ForecastJobWithLeak-20220124-015908</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.1, OS=ubuntu 20.04
+AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+  Job-UZSFOI : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+</code></pre>
+<pre><code>IterationCount=1  RunStrategy=Monitoring  
+</code></pre>
+
+<table>
+<thead><tr><th>Method</th><th>N</th><th>Mean</th><th>Error</th><th>Gen 0</th><th>Gen 1</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>Work</td><td>500</td><td>3.439 s</td><td>NA</td><td>32000.0000</td><td>2000.0000</td><td>515 MB</td>
+</tr></tbody></table>
+</body>
+</html>

@@ -1,0 +1,131 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/5158fd89-48ea-49c2-828a-463a71d5dd01
+// command took 1.82s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/5158fd89-48ea-49c2-828a-463a71d5dd01
+// command took 3.99s and exited with 0
+// ***** Done, took 00:00:05 (5.91 sec)   *****
+// Found 1 benchmarks:
+//   ForecastJobWithLeak.Work: DefaultJob [N=2]
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: DefaultJob [N=2]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "5158fd89-48ea-49c2-828a-463a71d5dd01.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 2)" --job "Default" --benchmarkId 0 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/5158fd89-48ea-49c2-828a-463a71d5dd01/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 741385.00 ns, 741.3850 us/op
+WorkloadJitting  1: 1 op, 3199099887.00 ns, 3.1991 s/op
+
+WorkloadWarmup   1: 1 op, 2025131670.00 ns, 2.0251 s/op
+WorkloadWarmup   2: 1 op, 2015650851.00 ns, 2.0157 s/op
+WorkloadWarmup   3: 1 op, 2011504883.00 ns, 2.0115 s/op
+WorkloadWarmup   4: 1 op, 2004484123.00 ns, 2.0045 s/op
+WorkloadWarmup   5: 1 op, 2012649081.00 ns, 2.0126 s/op
+WorkloadWarmup   6: 1 op, 2007035591.00 ns, 2.0070 s/op
+WorkloadWarmup   7: 1 op, 2014858665.00 ns, 2.0149 s/op
+WorkloadWarmup   8: 1 op, 2006860527.00 ns, 2.0069 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 2012262276.00 ns, 2.0123 s/op
+WorkloadActual   2: 1 op, 2007597279.00 ns, 2.0076 s/op
+WorkloadActual   3: 1 op, 2007412674.00 ns, 2.0074 s/op
+WorkloadActual   4: 1 op, 2007236376.00 ns, 2.0072 s/op
+WorkloadActual   5: 1 op, 2011046339.00 ns, 2.0110 s/op
+WorkloadActual   6: 1 op, 2011612546.00 ns, 2.0116 s/op
+WorkloadActual   7: 1 op, 2011666070.00 ns, 2.0117 s/op
+WorkloadActual   8: 1 op, 2012364908.00 ns, 2.0124 s/op
+WorkloadActual   9: 1 op, 2004368152.00 ns, 2.0044 s/op
+WorkloadActual  10: 1 op, 2019031509.00 ns, 2.0190 s/op
+WorkloadActual  11: 1 op, 2004316941.00 ns, 2.0043 s/op
+WorkloadActual  12: 1 op, 2003115473.00 ns, 2.0031 s/op
+WorkloadActual  13: 1 op, 2003849266.00 ns, 2.0038 s/op
+WorkloadActual  14: 1 op, 2004262256.00 ns, 2.0043 s/op
+WorkloadActual  15: 1 op, 2004640911.00 ns, 2.0046 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 2012262276.00 ns, 2.0123 s/op
+WorkloadResult   2: 1 op, 2007597279.00 ns, 2.0076 s/op
+WorkloadResult   3: 1 op, 2007412674.00 ns, 2.0074 s/op
+WorkloadResult   4: 1 op, 2007236376.00 ns, 2.0072 s/op
+WorkloadResult   5: 1 op, 2011046339.00 ns, 2.0110 s/op
+WorkloadResult   6: 1 op, 2011612546.00 ns, 2.0116 s/op
+WorkloadResult   7: 1 op, 2011666070.00 ns, 2.0117 s/op
+WorkloadResult   8: 1 op, 2012364908.00 ns, 2.0124 s/op
+WorkloadResult   9: 1 op, 2004368152.00 ns, 2.0044 s/op
+WorkloadResult  10: 1 op, 2019031509.00 ns, 2.0190 s/op
+WorkloadResult  11: 1 op, 2004316941.00 ns, 2.0043 s/op
+WorkloadResult  12: 1 op, 2003115473.00 ns, 2.0031 s/op
+WorkloadResult  13: 1 op, 2003849266.00 ns, 2.0038 s/op
+WorkloadResult  14: 1 op, 2004262256.00 ns, 2.0043 s/op
+WorkloadResult  15: 1 op, 2004640911.00 ns, 2.0046 s/op
+GC:  0 0 0 58304 1
+Threading:  15 0 1
+
+// AfterAll
+// Benchmark Process 62875 has exited with code 0.
+
+Mean = 2.008 s, StdErr = 0.001 s (0.06%), N = 15, StdDev = 0.005 s
+Min = 2.003 s, Q1 = 2.004 s, Median = 2.007 s, Q3 = 2.012 s, Max = 2.019 s
+IQR = 0.007 s, LowerFence = 1.993 s, UpperFence = 2.023 s
+ConfidenceInterval = [2.003 s; 2.013 s] (CI 99.9%), Margin = 0.005 s (0.24% of Mean)
+Skewness = 0.7, Kurtosis = 2.54, MValue = 2
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report.csv
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report-github.md
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report.html
+
+// * Detailed results *
+ForecastJobWithLeak.Work: DefaultJob [N=2]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 2.008 s, StdErr = 0.001 s (0.06%), N = 15, StdDev = 0.005 s
+Min = 2.003 s, Q1 = 2.004 s, Median = 2.007 s, Q3 = 2.012 s, Max = 2.019 s
+IQR = 0.007 s, LowerFence = 1.993 s, UpperFence = 2.023 s
+ConfidenceInterval = [2.003 s; 2.013 s] (CI 99.9%), Margin = 0.005 s (0.24% of Mean)
+Skewness = 0.7, Kurtosis = 2.54, MValue = 2
+-------------------- Histogram --------------------
+[2.001 s ; 2.021 s) | @@@@@@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=ubuntu 20.04
+AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+  DefaultJob : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+
+
+| Method | N |    Mean |    Error |   StdDev | Allocated |
+|------- |-- |--------:|---------:|---------:|----------:|
+|   Work | 2 | 2.008 s | 0.0048 s | 0.0045 s |     57 KB |
+
+// * Legends *
+  N         : Value of the 'N' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 s       : 1 Second (1 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:52 (52.45 sec), executed benchmarks: 1
+
+Global total time: 00:00:58 (58.37 sec), executed benchmarks: 1
+// * Artifacts cleanup *

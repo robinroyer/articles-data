@@ -1,0 +1,95 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/65b41b79-5e91-4d89-950e-582b7618c80a
+// command took 1.79s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/65b41b79-5e91-4d89-950e-582b7618c80a
+// command took 3.88s and exited with 0
+// ***** Done, took 00:00:05 (5.77 sec)   *****
+// Found 1 benchmarks:
+//   ForecastJobWithLeak.Work: Job-UZSFOI(IterationCount=1, RunStrategy=Monitoring) [N=500]
+
+// **************************
+// Benchmark: ForecastJobWithLeak.Work: Job-UZSFOI(IterationCount=1, RunStrategy=Monitoring) [N=500]
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet "65b41b79-5e91-4d89-950e-582b7618c80a.dll" --benchmarkName "ef_core_momory_cache_leak.ForecastJobWithLeak.Work(N: 500)" --job "IterationCount=1, RunStrategy=Monitoring" --benchmarkId 0 in /home/robin/code/Personnal/articles-data/ef-core-momory-cache-leak/bin/Release/net6.0/65b41b79-5e91-4d89-950e-582b7618c80a/bin/Release/net6.0
+Failed to set up high priority. Make sure you have the right permissions. Message: Permission denied
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// Runtime=.NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+// GC=Concurrent Server
+// Job: Job-WBDSSZ(IterationCount=1, RunStrategy=Monitoring)
+
+WorkloadWarmup   1: 1 op, 3697866864.00 ns, 3.6979 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 3439068137.00 ns, 3.4391 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 3439068137.00 ns, 3.4391 s/op
+GC:  32 2 0 540162944 1
+Threading:  6855 1 1
+
+// AfterAll
+// Benchmark Process 64954 has exited with code 0.
+
+Mean = 3.439 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.439 s, Q1 = 3.439 s, Median = 3.439 s, Q3 = 3.439 s, Max = 3.439 s
+IQR = 0.000 s, LowerFence = 3.439 s, UpperFence = 3.439 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report.csv
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report-github.md
+  BenchmarkDotNet.Artifacts/results/ef_core_momory_cache_leak.ForecastJobWithLeak-report.html
+
+// * Detailed results *
+ForecastJobWithLeak.Work: Job-UZSFOI(IterationCount=1, RunStrategy=Monitoring) [N=500]
+Runtime = .NET 6.0.1 (6.0.121.56705), X64 RyuJIT; GC = Concurrent Server
+Mean = 3.439 s, StdErr = 0.000 s (0.00%), N = 1, StdDev = 0.000 s
+Min = 3.439 s, Q1 = 3.439 s, Median = 3.439 s, Q3 = 3.439 s, Max = 3.439 s
+IQR = 0.000 s, LowerFence = 3.439 s, UpperFence = 3.439 s
+ConfidenceInterval = [NaN s; NaN s] (CI 99.9%), Margin = NaN s (NaN% of Mean)
+Skewness = NaN, Kurtosis = NaN, MValue = 2
+-------------------- Histogram --------------------
+[3.439 s ; 3.439 s) | @
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet=v0.13.1, OS=ubuntu 20.04
+AMD Ryzen 5 PRO 2500U w/ Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK=6.0.101
+  [Host]     : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+  Job-UZSFOI : .NET 6.0.1 (6.0.121.56705), X64 RyuJIT
+
+IterationCount=1  RunStrategy=Monitoring  
+
+| Method |   N |    Mean | Error |      Gen 0 |     Gen 1 | Allocated |
+|------- |---- |--------:|------:|-----------:|----------:|----------:|
+|   Work | 500 | 3.439 s |    NA | 32000.0000 | 2000.0000 |    515 MB |
+
+// * Legends *
+  N         : Value of the 'N' parameter
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  Gen 0     : GC Generation 0 collects per 1000 operations
+  Gen 1     : GC Generation 1 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 s       : 1 Second (1 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+// ** Remained 0 benchmark(s) to run **
+Run time: 00:00:12 (12.65 sec), executed benchmarks: 1
+
+Global total time: 00:00:18 (18.43 sec), executed benchmarks: 1
+// * Artifacts cleanup *
